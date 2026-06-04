@@ -1,85 +1,83 @@
 # Ireland Rent Dashboard Workshop
 
-## Required Tools
+Welcome! This repository is the starting point for the workshop so attendees can follow the live coding flow, use VS Code agents, and work on the Ireland Rent Dashboard demo.
 
-Install these before the workshop:
+## What You Need Before the Workshop
 
 1. **VS Code**
-   - Recommended editor for using the custom agents in `.github/agents/`.
-   - Install the GitHub Copilot / Copilot Chat extensions if your workshop flow uses VS Code chat agents.
+   - Use VS Code to access the custom agents and workshop files.
+   - Install GitHub Copilot / Copilot Chat if your session uses the chat agent flow.
 
 2. **Java 21 JDK**
    - Required for Spring Boot 3.x and Vaadin Flow.
-   - Verify:
+   - Confirm with:
 
    ```bash
    java -version
    ```
 
 3. **Gradle**
-   - Required to generate, build, and run the workshop app.
-   - Use `./gradlew` after the project wrapper exists.
-   - Verify:
+   - The project uses Gradle to build and run the app.
+   - Use the wrapper once it exists: `./gradlew`
+   - Confirm with:
 
    ```bash
    gradle --version
    ```
 
 4. **Git**
-   - Needed for version control and workshop checkpoints.
-   - Verify:
+   - Needed for version control, checkpoints, and workshop collaboration.
+   - Confirm with:
 
    ```bash
    git --version
    ```
 
-## Repository Purpose
+## How This Repo Works for the Workshop
 
-This repository contains the workshop instructions, custom agents, and skills for building a Java/Spring/Vaadin Ireland rent dashboard and template-engine demo.
+This repository is designed around a simple feedback loop:
 
-The important workshop files are:
+- capture requirements in a scratch pad
+- convert them into issue drafts with a Product Manager Agent
+- implement small issues with a Software Engineer Agent
+- build, run, and verify the app locally
 
-- `.github/project-instructions.md` - Global project rules for agents.
-- `.github/agents/software-engineer-agent.md` - Engineering agent behavior.
-- `.github/agents/product-manager-agent.md` - Product/issue drafting agent behavior.
-- `.github/skills/java-architect/` - Java, Spring Boot, JPA, security, testing, and Vaadin guidance.
-- `.github/skills/java-vaadin-template-engine/` - Vaadin template-engine generation guidance.
-- `.github/skills/workshop-demo-guardian/` - Live demo reliability guidance.
-- `.github/docs/scratch_book.txt` - Requirement scratch pad.
-- `.github/docs/issues/` - Local issue drafts created from the scratch book.
+### Important Workshop Files
 
-## How To Use The Custom Agents
+- `.github/docs/scratch_book.txt` — where attendees add raw feature ideas and requirements.
+- `.github/docs/issues/` — where issue drafts are generated.
+- `.github/project-instructions.md` — project rules used by the agents.
+- `.github/agents/software-engineer-agent.md` — behavior guide for the engineering agent.
+- `.github/agents/product-manager-agent.md` — behavior guide for the product agent.
+- `.github/skills/java-architect/` — Java/Spring/Vaadin guidance.
+- `.github/skills/java-vaadin-template-engine/` — Vaadin template generation guidance.
+- `.github/skills/workshop-demo-guardian/` — live-demo reliability guidance.
 
-### 1. Add Requirements
+## Attendee Workflow
 
-Write raw workshop requirements, feature ideas, constraints, or presenter notes in:
+1. Add workshop requirements to `.github/docs/scratch_book.txt`.
+2. Use the **Product Manager Agent** to turn the scratch book into issue drafts.
+3. Pick one issue from `.github/docs/issues/` to implement.
+4. Use the **Software Engineer Agent** to implement that issue.
+5. Run the app locally and verify the feature.
 
-```text
-.github/docs/scratch_book.txt
-```
+## Using the Product Manager Agent
 
-Use this file as the source of truth for product input.
+The Product Manager Agent helps break large workshop goals into small, actionable issues.
 
-### 2. Run The Product Manager Agent
-
-Select **Product Manager Agent** in your VS Code/Copilot agent workflow and ask it to convert the scratch book into issue drafts.
-
-Expected behavior:
-
-- Reads `.github/docs/scratch_book.txt`.
-- Splits requirements into small workshop-ready feature slices.
-- Creates Markdown issue drafts in `.github/docs/issues/`.
-- Uses file names like:
+- Open the agent in VS Code/Copilot.
+- Ask it to convert `.github/docs/scratch_book.txt` into issue drafts.
+- It should create files under `.github/docs/issues/` such as:
 
 ```text
 .github/docs/issues/001-rent-summary-dashboard.md
 ```
 
-Remote GitHub issues are not part of the default workshop flow. Create them only after an explicit request.
+> Note: This repo does not automatically create remote GitHub issues unless explicitly requested.
 
-### 3. Run The Software Engineer Agent
+## Using the Software Engineer Agent
 
-Select **Software Engineer Agent** when implementing an issue draft.
+The Software Engineer Agent should implement issue drafts using the project rules and skill guidance.
 
 Recommended prompt:
 
@@ -89,17 +87,15 @@ Implement .github/docs/issues/001-rent-summary-dashboard.md using the project in
 
 Expected behavior:
 
-- Reads `.github/project-instructions.md`.
-- Loads relevant skills from `.github/skills/`.
-- Uses `java-architect` for Java/Spring work.
-- Uses `java-vaadin-template-engine` for Vaadin route, form, grid, and template generation.
-- Uses `workshop-demo-guardian` for live-demo preflight and fallback planning.
+- reads `.github/project-instructions.md`
+- loads relevant skills from `.github/skills/`
+- uses Java/Spring guidance from `java-architect`
+- uses Vaadin guidance from `java-vaadin-template-engine`
+- uses `workshop-demo-guardian` for safe live-demo choices
 
-## Build And Run Commands
+## Build and Run
 
-Once the Java app exists, prefer the project wrapper.
-
-For Gradle projects:
+Use the Gradle wrapper when available:
 
 ```bash
 ./gradlew compileJava
@@ -107,22 +103,23 @@ For Gradle projects:
 ./gradlew bootRun
 ```
 
-Use installed Gradle only to generate or bootstrap the project before `./gradlew` exists.
+If the wrapper is not present yet, use your installed Gradle only for project generation and setup.
 
-## Live Workshop Flow
+## Live Demo Checklist
 
-1. Put requirements in `.github/docs/scratch_book.txt`.
-2. Ask **Product Manager Agent** to create issue drafts under `.github/docs/issues/`.
-3. Pick one small issue for the live demo.
-4. Ask **Software Engineer Agent** to implement that issue.
-5. Run the focused compile/test command.
-6. Start the app and smoke-test the Vaadin route.
-7. Keep the full verification command for pre-demo and post-demo checks.
+- Keep each feature small and easy to verify.
+- Prefer local data and avoid external services.
+- Do not add new dependencies during live coding unless necessary.
+- Check that the app port is free before starting the server.
+- If a step fails, capture the exact error and switch to the safest fallback.
 
-## Demo Safety Rules
+## Quick Start for Workshop Attendees
 
-- Keep features small and visible.
-- Prefer local deterministic data over live services.
-- Avoid adding new dependencies during the live session.
-- Check ports before starting the app.
-- If a command fails, record the exact blocker and continue with the safest local fallback.
+1. Open the workspace in VS Code.
+2. Confirm Java, Gradle, and Git are installed.
+3. Add your first idea to `.github/docs/scratch_book.txt`.
+4. Run the Product Manager Agent to create an issue draft.
+5. Ask the Software Engineer Agent to implement that issue.
+6. Build and run the app to verify the result.
+
+Enjoy the workshop and use this repo as your shared starting point for the live session.
