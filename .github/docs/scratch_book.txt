@@ -1,0 +1,6 @@
+# Workshop Scratch Book
+
+Place raw product requirements, demo notes, constraints, and feature ideas here.
+
+The Product Manager Agent reads this file first and turns the content into issue drafts under `.github/docs/issues/`.
+
