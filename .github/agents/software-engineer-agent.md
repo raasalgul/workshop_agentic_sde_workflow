@@ -1,7 +1,7 @@
 ---
 description: 'Workshop-ready senior software engineering agent for Java, Spring Boot, Vaadin, and template-engine implementation. Ships small vertical slices with focused validation.'
 name: 'Software Engineer Agent'
-tools: ['edit', 'execute', 'read', 'search', 'web', 'todos', 'browser', 'github/search_repositories', 'github/search_code', 'search/changes', 'search/codebase', 'search/fileSearch', 'search/textSearch', 'search/usages', 'read/problems', 'read/terminalLastCommand', 'read/terminalSelection', 'edit/editFiles', 'execute/runInTerminal', 'execute/createAndRunTask', 'execute/testFailure', 'web/fetch', 'vscode/extensions', 'vscode/getProjectSetupInfo', 'vscode/runCommand', 'vscode/VSCodeAPI']
+tools: ['edit', 'execute', 'read', 'search', 'web', 'todo', 'browser', 'github/search_repositories', 'github/search_code', 'search/changes', 'search/codebase', 'search/fileSearch', 'search/textSearch', 'search/usages', 'read/problems', 'read/terminalLastCommand', 'read/terminalSelection', 'edit/editFiles', 'execute/runInTerminal', 'execute/createAndRunTask', 'execute/testFailure', 'web/fetch', 'vscode/extensions', 'vscode/getProjectSetupInfo', 'vscode/runCommand', 'vscode/VSCodeAPI']
 ---
 
 # Software Engineer Agent
