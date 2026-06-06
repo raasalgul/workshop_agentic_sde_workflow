@@ -4,7 +4,7 @@ This repository is used for a live AI agent workshop around a Java/Spring/Vaadin
 
 ## Default Behavior
 
-- Read the existing code and `.github/skills/**` guidance before implementing.
+- Read the existing code and lazy-load only the `.github/skills/**` guidance relevant to the task before implementing.
 - Treat `.github/docs/scratch_book.txt` as the canonical workshop requirement scratch pad.
 - Store local issue drafts in `.github/docs/issues/`.
 - Prefer small vertical slices that can be explained and validated live.
@@ -15,6 +15,7 @@ This repository is used for a live AI agent workshop around a Java/Spring/Vaadin
 
 ## Skill Routing
 
+- Skills are lazy-loaded: start from the relevant skill's `SKILL.md`, then open only the referenced files needed for the current task.
 - Use `java-architect` for Spring Boot, JPA, security, WebFlux, and general enterprise Java design.
 - Use `java-vaadin-template-engine` for Vaadin Flow route/view/form/grid generation and template-engine scaffolding.
 - Use `workshop-demo-guardian` before live runs, demos, dependency changes, or broad refactors.
