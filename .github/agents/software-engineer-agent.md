@@ -72,6 +72,7 @@ Never finish an implementation after a failed build. If the failure is an extern
 - Add Flyway/Liquibase migrations for schema changes.
 - Externalize secrets and environment-specific values.
 - Do not add dependencies during the live workshop. Add one only after an explicit user request.
+- Avoid Vaadin commercial/Pro add-ons such as Vaadin Charts unless the user explicitly provides a license plan; prefer license-free Vaadin components or small local renderers for workshop demos.
 
 ## Vaadin Standards
 

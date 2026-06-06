@@ -1,6 +1,38 @@
 # Workshop Scratch Book
 
-Place raw product requirements, demo notes, constraints, and feature ideas here.
+I want to build a small Spring Boot + Vaadin application for showing Ireland rent data for the last five years across counties.
 
-The Product Manager Agent reads this file first and turns the content into issue drafts under `.github/docs/issues/`.
+Lets use H2 database and seed it using the dataset from the repo dataset/irish_rent_by_country.csv
 
+The main idea is to have a rent analytics dashboard, but instead of putting everything into one page, we can split the dashboard into two pages so the UI looks cleaner in Vaadin.
+
+Page 1: Rent Overview Dashboard
+
+This page should show the main summary information:
+
+* Latest year average rent
+* County with the highest rent
+* County with the lowest rent
+* Fastest growing county over the available years
+* A line chart for the top 5 most expensive counties
+* A line chart for the 5 least expensive counties
+
+Page 2: Rent Growth and Ranking Dashboard
+
+This page should focus more on comparison and ranking:
+
+* A bar chart showing county rent ranking for the latest year
+* A bar chart showing rent growth percentage by county over the available years
+* A line chart showing national average rent trend year by year
+
+Page 3: Custom Graph Builder
+
+This page should allow the user to select:
+
+* From year
+* To year
+* Up to 3 counties
+
+After clicking a button, it should generate a line chart comparing the selected counties across the selected year range.
+
+Keep the application simple and demo-friendly. The goal is to show how agents can take a basic requirement and create a working Vaadin application with useful dashboards.
